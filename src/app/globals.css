@@ -1,26 +1,912 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Animated Blob */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
   }
 }
 
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* RTL Hero Section Adjustments */
+html[dir="rtl"] .hero-stats {
+  text-align: right;
+}
+
+html[dir="rtl"] .hero-buttons {
+  flex-direction: row-reverse;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #111827;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Arabic RTL Support */
+html[dir="rtl"] {
+  font-family: var(--font-arabic), sans-serif;
+}
+
+/* RTL Text Alignment - only for elements that don't have explicit alignment */
+html[dir="rtl"] body,
+html[dir="rtl"] p,
+html[dir="rtl"] div:not(.text-center):not(.text-left):not(.text-right) {
+  text-align: right;
+}
+
+/* Don't reverse all flex containers - be more specific */
+html[dir="rtl"] .flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* RTL Spacing Adjustments - Fix horizontal spacing */
+html[dir="rtl"] .space-x-2 > * + * {
+  margin-right: 0.5rem !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .space-x-4 > * + * {
+  margin-right: 1rem !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .space-x-6 > * + * {
+  margin-right: 1.5rem !important;
+  margin-left: 0 !important;
+}
+
+html[dir="rtl"] .space-x-8 > * + * {
+  margin-right: 2rem !important;
+  margin-left: 0 !important;
+}
+
+/* RTL Vertical spacing should remain the same */
+html[dir="rtl"] .space-y-1 > * + * {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0 !important;
+}
+
+html[dir="rtl"] .space-y-2 > * + * {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+html[dir="rtl"] .space-y-3 > * + * {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0 !important;
+}
+
+html[dir="rtl"] .space-y-4 > * + * {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* RTL Padding Adjustments */
+html[dir="rtl"] .pl-2 {
+  padding-right: 0.5rem !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .pl-3 {
+  padding-right: 0.75rem !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .pl-4 {
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+html[dir="rtl"] .pr-2 {
+  padding-left: 0.5rem !important;
+  padding-right: 0 !important;
+}
+
+html[dir="rtl"] .pr-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0 !important;
+}
+
+html[dir="rtl"] .pr-4 {
+  padding-left: 1rem !important;
+  padding-right: 0 !important;
+}
+
+/* RTL Margin Adjustments */
+html[dir="rtl"] .ml-2 {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-3 {
+  margin-right: 0.75rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .ml-4 {
+  margin-right: 1rem;
+  margin-left: 0;
+}
+
+html[dir="rtl"] .mr-2 {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-3 {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-4 {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .mr-6 {
+  margin-left: 1.5rem;
+  margin-right: 0;
+}
+
+/* RTL Text Alignment */
+html[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+html[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+/* Ensure section headers are always centered */
+section h2.text-center,
+section p.text-center {
+  text-align: center !important;
+}
+
+html[dir="rtl"] section h2.text-center,
+html[dir="rtl"] section p.text-center {
+  text-align: center !important;
+}
+
+/* RTL Fix for How We Help section icons and text */
+html[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+html[dir="rtl"] .mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure flex items are centered in RTL */
+html[dir="rtl"] .flex.items-center.justify-center {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* RTL Grid alignment fix - keep grid layout but center content */
+html[dir="rtl"] .grid.md\\:grid-cols-3 > div {
+  text-align: center !important;
+}
+
+/* Ensure icons stay centered in RTL */
+html[dir="rtl"] .rounded-full.flex.items-center.justify-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* RTL Positioning */
+html[dir="rtl"] .left-0 {
+  right: 0 !important;
+  left: auto !important;
+}
+
+html[dir="rtl"] .right-0 {
+  left: 0 !important;
+  right: auto !important;
+}
+
+html[dir="rtl"] .left-4 {
+  right: 1rem !important;
+  left: auto !important;
+}
+
+html[dir="rtl"] .right-4 {
+  left: 1rem !important;
+  right: auto !important;
+}
+
+/* FIXED: Navbar Centering for All Languages */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 80rem; /* Same as Tailwind's max-w-7xl */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+}
+
+/* RTL Navbar Fixes */
+html[dir="rtl"] .navbar {
+  direction: rtl;
+}
+
+html[dir="rtl"] .navbar-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+html[dir="rtl"] .navbar-content {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Ensure navbar centering in RTL */
+html[dir="rtl"] .max-w-7xl {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Fix for the centered navigation */
+html[dir="rtl"] .flex.justify-center {
+  justify-content: center !important;
+}
+
+/* Ensure proper spacing in RTL */
+html[dir="rtl"] .mx-8 {
+  margin-right: 2rem !important;
+  margin-left: 2rem !important;
+}
+
+/* Ensure logo and nav items are properly aligned in RTL */
+html[dir="rtl"] .navbar-logo {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .nav-links {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Mobile menu fixes for RTL */
+html[dir="rtl"] .mobile-menu {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+
+/* Component Styles */
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #f3f4f6;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Form Styles */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation Styles */
+.nav-link {
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease-in-out;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #3b82f6;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+html[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.hero-title {
+  background: linear-gradient(135deg, #111827 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Service Card Styles */
+.service-card {
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-card-image {
+  height: 12rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  border-radius: 0.75rem 0.75rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.service-card-description {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.service-card-link {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out;
+}
+
+.service-card-link:hover {
+  color: #1d4ed8;
+}
+
+/* FAQ Styles */
+.faq-item {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.faq-question:hover {
+  background-color: #f9fafb;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: #6b7280;
+  line-height: 1.6;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* Contact Form Styles */
+.contact-form {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #eff6ff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+html[dir="rtl"] .contact-icon {
+  margin-left: 1rem !important;
+  margin-right: 0 !important;
+}
+
+/* RTL Arrow and Icon fixes */
+html[dir="rtl"] .arrow-left,
+html[dir="rtl"] .arrow-right {
+  transform: scaleX(-1);
+}
+
+/* RTL Button and Link fixes */
+html[dir="rtl"] button,
+html[dir="rtl"] a {
+  text-align: inherit;
+}
+
+/* RTL Input and Form fixes */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+  text-align: right;
+  direction: rtl;
+}
+
+html[dir="rtl"] input::placeholder,
+html[dir="rtl"] textarea::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #111827;
+  color: white;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+/* Language Selector Styles */
+.language-selector {
+  position: relative;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.language-button:hover {
+  background-color: #f9fafb;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 50;
+  min-width: 140px;
+}
+
+html[dir="rtl"] .language-dropdown {
+  left: 0;
+  right: auto;
+}
+
+.language-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color: #374151;
+}
+
+html[dir="rtl"] .language-option {
+  text-align: right;
+}
+
+.language-option:hover {
+  background-color: #f9fafb;
+}
+
+.language-option.active {
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+/* Utility Classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .service-card-image {
+    height: 10rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .language-dropdown {
+    right: 0;
+    left: auto;
+  }
+
+  html[dir="rtl"] .language-dropdown {
+    left: 0;
+    right: auto;
+  }
+
+  /* Mobile navbar fixes */
+  .navbar-content {
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    margin: 0 0.5rem;
+  }
+
+  .contact-info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-icon {
+    margin: 0 auto 1rem auto;
+  }
+
+  .navbar-container {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .language-selector,
+  .btn-primary,
+  .btn-secondary {
+    display: none !important;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #000;
+  }
+
+  .btn-primary {
+    border: 2px solid #000;
+  }
+
+  .form-input:focus {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Force navbar centering - Emergency fix */
+nav.fixed {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+nav.fixed > div:first-child {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+nav.fixed .max-w-7xl {
+  width: 100% !important;
+  max-width: 80rem !important;
+  margin: 0 auto !important;
 }

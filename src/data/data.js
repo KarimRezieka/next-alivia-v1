@@ -6,7 +6,7 @@ export const siteData = {
     mission: "To provide comprehensive, reliable, and personalized immigration and educational services that make your transition to Spain seamless and successful.",
     email: "info@alivia.es",
     phone: "+",
-    address: "Calle Mayor 123, 28013 Madrid, Spain"
+    address: "Spain"
   },
   
   navigation: [

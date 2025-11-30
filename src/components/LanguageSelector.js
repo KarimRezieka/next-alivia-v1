@@ -4,9 +4,10 @@ import { useTranslation } from "../hooks/useTranslation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const languages = [
+  { code: "ar", name: "العربية", flag: "🇪🇬" },
   { code: "en", name: "English", flag: "🇺🇸" },
   { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "ar", name: "العربية", flag: "🇸🇦" },
+  
 ];
 
 export default function LanguageSelector() {

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useSiteData } from "@/hooks/useSiteData";
 import { useTranslation } from "@/hooks/useTranslation";
+import Image from "next/image";
 
 export default function Team() {
   const { t } = useTranslation();
@@ -25,7 +26,7 @@ export default function Team() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -33,21 +34,30 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card text-center group hover:shadow-xl transition-all duration-300"
+              className="card text-center group hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-64 bg-gradient-to-br from-primary-100 to-primary-200 rounded-t-xl flex items-center justify-center mb-6">
-                <div className="w-32 h-32 bg-primary-300 rounded-full flex items-center justify-center">
-                  <span className="text-4xl text-primary-700">👨‍💼</span>
+              <div className="relative h-64 rounded-t-xl mb-6 overflow-hidden flex-shrink-0">
+                {/* Rectangle/square image container */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 20vw"
+                  />
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {member.name}
                 </h3>
                 <p className="text-primary-600 font-medium mb-3">
                   {member.role}
                 </p>
-                <p className="text-gray-600 text-sm">{member.description}</p>
+                <p className="text-gray-600 text-sm flex-grow">
+                  {member.description}
+                </p>
               </div>
             </motion.div>
           ))}

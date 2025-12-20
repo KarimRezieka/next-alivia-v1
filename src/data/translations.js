@@ -12,16 +12,26 @@ export const translations = {
     allServices: "All Services",
 
     // Hero Section
-    heroTitle: "Your Gateway to Spain",
-    heroSubtitle:
-      "Expert immigration and study guidance for your Spanish journey",
-    exploreServices: "Explore Services",
-    getConsultation: "Get Consultation",
-    welcomeToSpain: "Welcome to Spain",
-    dreamDestination: "Your dream destination awaits",
+heroTitle: "Your Gateway to Spanish Education",
+heroSubtitle: "Expert university admissions and student visa guidance for your academic journey in Spain",
+exploreServices: "Explore Study Programs",
+getConsultation: "Free Consultation",
+welcomeToSpain: "Welcome to Spain",
+dreamDestination: "Your academic future awaits",
+studyIn: "Study in",
+visaAssistance: "Visa Assistance",
+guaranteedSuccess: "Guaranteed success",
+universityAdmissions: "University Admissions",
+topInstitutions: "Top institutions",
+studyAtTopUniversities: "Study at Top Spanish Universities",
+visaSuccessRate: "98% Visa Success",
+campusesAcross: "Campuses Across",
+spain: "Spain",
+programsCount: "50+",
+programsAvailable: "Programs Available",
 
     // Features
-    whyChooseAlivia: "Why Choose Alivia?",
+    whyChooseAlivia: "Why Choose Aliviva?",
     featuresSub:
       "We provide comprehensive support throughout your entire Spanish journey",
     expertGuidance: "Expert Guidance",
@@ -55,7 +65,7 @@ export const translations = {
       "We work with trusted institutions and organizations to provide you the best service",
 
     // About
-    aboutAlivia: "About Alivia",
+    aboutAlivia: "About Aliviva",
     mission:
       "To provide comprehensive, reliable, and personalized immigration and educational services that make your transition to Spain seamless and successful.",
     expertTeam: "Expert Team",
@@ -85,6 +95,7 @@ export const translations = {
     email: "Email",
     phone: "Phone",
     address: "Address",
+    preservationNote: "Please book an appointment before visiting the office",
     officeHours: "Office Hours",
     mondayFriday: "Monday - Friday: 9:00 AM - 6:00 PM",
     saturday: "Saturday: 10:00 AM - 2:00 PM",
@@ -159,7 +170,7 @@ export const translations = {
     backToHome: "Back to Home",
     lastUpdated: "Last updated: January 15, 2025",
     privacyIntro:
-      "At Alivia, we respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data when you use our services.",
+      "At Aliviva, we respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data when you use our services.",
     quickNavigation: "Quick Navigation",
     informationCollection: "Information We Collect",
     informationUse: "How We Use Your Information",
@@ -679,16 +690,26 @@ export const translations = {
     allServices: "Todos los Servicios",
 
     // Hero Section
-    heroTitle: "Tu Puerta de Entrada a España",
-    heroSubtitle:
-      "Orientación experta en inmigración y estudios para tu viaje español",
-    exploreServices: "Explorar Servicios",
-    getConsultation: "Obtener Consulta",
-    welcomeToSpain: "Bienvenido a España",
-    dreamDestination: "Tu destino soñado te espera",
+heroTitle: "Tu Puerta de Entrada a la Educación Española",
+heroSubtitle: "Orientación experta en admisiones universitarias y visas de estudiante para tu viaje académico en España",
+exploreServices: "Explorar Programas de Estudio",
+getConsultation: "Consulta Gratuita",
+welcomeToSpain: "Bienvenido a España",
+dreamDestination: "Tu futuro académico te espera",
+studyIn: "Estudiar en",
+visaAssistance: "Asistencia de Visa",
+guaranteedSuccess: "Éxito garantizado",
+universityAdmissions: "Admisiones Universitarias",
+topInstitutions: "Instituciones principales",
+studyAtTopUniversities: "Estudiar en las Mejores Universidades Españolas",
+visaSuccessRate: "98% Éxito de Visa",
+campusesAcross: "Campus en",
+spain: "España",
+programsCount: "50+",
+programsAvailable: "Programas Disponibles",
 
     // Features
-    whyChooseAlivia: "¿Por qué Elegir Alivia?",
+    whyChooseAlivia: "¿Por qué Elegir Aliviva?",
     featuresSub: "Proporcionamos apoyo integral durante todo tu viaje español",
     expertGuidance: "Orientación Experta",
     expertGuidanceDesc:
@@ -722,7 +743,7 @@ export const translations = {
       "Trabajamos con instituciones y organizaciones de confianza para brindarle el mejor servicio",
 
     // About
-    aboutAlivia: "Acerca de Alivia",
+    aboutAlivia: "Acerca de Aliviva",
     mission:
       "Proporcionar servicios de inmigración y educación integrales, confiables y personalizados que hagan que su transición a España sea perfecta y exitosa.",
     expertTeam: "Equipo Experto",
@@ -754,6 +775,7 @@ export const translations = {
     email: "Correo Electrónico",
     phone: "Teléfono",
     address: "Dirección",
+    preservationNote: "Por favor, reserve cita antes de visitar la oficina.",
     officeHours: "Horario de Oficina",
     mondayFriday: "Lunes - Viernes: 9:00 AM - 6:00 PM",
     saturday: "Sábado: 10:00 AM - 2:00 PM",
@@ -829,7 +851,7 @@ export const translations = {
     backToHome: "Volver al Inicio",
     lastUpdated: "Última actualización: 15 de enero de 2025",
     privacyIntro:
-      "En Alivia, respetamos su privacidad y nos comprometemos a proteger su información personal. Esta política explica cómo recopilamos, usamos y protegemos sus datos cuando utiliza nuestros servicios.",
+      "En Aliviva, respetamos su privacidad y nos comprometemos a proteger su información personal. Esta política explica cómo recopilamos, usamos y protegemos sus datos cuando utiliza nuestros servicios.",
     quickNavigation: "Navegación Rápida",
     informationCollection: "Información que Recopilamos",
     informationUse: "Cómo Usamos Su Información",
@@ -1316,16 +1338,27 @@ export const translations = {
     contact: "اتصل بنا",
     allServices: "جميع الخدمات",
 
-    // Hero Section
-    heroTitle: "بوابتك إلى إسبانيا",
-    heroSubtitle: "إرشادات خبيرة للهجرة والدراسة لرحلتك الإسبانية",
-    exploreServices: "استكشاف الخدمات",
-    getConsultation: "احصل على استشارة",
-    welcomeToSpain: "مرحباً بك في إسبانيا",
-    dreamDestination: "وجهة أحلامك في انتظارك",
+// Hero Section
+heroTitle: "بوابتك إلى التعليم الإسباني",
+heroSubtitle: "إرشادات خبيرة للقبول الجامعي وتأشيرة الطالب لرحلتك الأكاديمية في إسبانيا",
+exploreServices: "استكشاف برامج الدراسة",
+getConsultation: "استشارة مجانية",
+welcomeToSpain: "مرحباً بك في إسبانيا",
+dreamDestination: "مستقبلك الأكاديمي في انتظارك",
+studyIn: "ادرس في",
+visaAssistance: "مساعدة التأشيرة",
+guaranteedSuccess: "نجاح مضمون",
+universityAdmissions: "القبول الجامعي",
+topInstitutions: "أفضل المؤسسات",
+studyAtTopUniversities: "ادرس في أفضل الجامعات الإسبانية",
+visaSuccessRate: "نجاح التأشيرة 98%",
+campusesAcross: "الجامعات في جميع أنحاء",
+spain: "إسبانيا",
+programsCount: "50+",
+programsAvailable: "البرامج المتاحة",
 
     // Features
-    whyChooseAlivia: "لماذا تختار أليفيا؟",
+    whyChooseAlivia: "لماذا تختار أليفيفا؟",
     featuresSub: "نحن نقدم دعماً شاملاً طوال رحلتك الإسبانية بالكامل",
     expertGuidance: "إرشاد خبير",
     expertGuidanceDesc:
@@ -1355,7 +1388,7 @@ export const translations = {
     partnersSub: "نحن نعمل مع مؤسسات ومنظمات موثوقة لنقدم لك أفضل خدمة",
 
     // About
-    aboutAlivia: "حول أليفيا",
+    aboutAlivia: "حول أليفيفا",
     mission:
       "تقديم خدمات هجرة وتعليمية شاملة وموثوقة ومخصصة تجعل انتقالك إلى إسبانيا سلساً وناجحاً.",
     expertTeam: "فريق خبير",
@@ -1382,6 +1415,7 @@ export const translations = {
     email: "البريد الإلكتروني",
     phone: "الهاتف",
     address: "العنوان",
+    preservationNote: "برجاء الحجز قبل الحضور إلى المكتب.",
     officeHours: "ساعات العمل",
     mondayFriday: "الإثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً",
     saturday: "السبت: 10:00 صباحاً - 2:00 مساءً",

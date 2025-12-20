@@ -1,12 +1,13 @@
 export const siteData = {
   company: {
-    name: "Alivia",
+    name: "Aliviva",
     tagline: "Your Gateway to Spain",
     description: "Expert immigration and study guidance for your Spanish journey",
     mission: "To provide comprehensive, reliable, and personalized immigration and educational services that make your transition to Spain seamless and successful.",
     email: "info@alivia.es",
-    phone: "+",
-    address: "Spain"
+    phone: "+201116909878",
+    address: "Carrer de Lepant, 270 Barcelona,",
+    preservationNote: "please preservation is required",
   },
   
   navigation: [
@@ -44,25 +45,25 @@ export const siteData = {
   ],
 
   services: [
-    {
-      id: "student-visa",
-      title: "Student Visa (Estudio)",
-      category: "visa",
-      description: "Complete assistance with Spanish student visa applications for international students.",
-      detailedDescription: "Our comprehensive student visa service covers everything from initial consultation to visa approval. We guide you through the complex Spanish immigration process, ensuring all documentation is properly prepared and submitted.",
-      image: "/images/student-visa.jpg",
-      requiredPapers: [
-        "Valid passport",
-        "Completed visa application form",
-        "Academic transcripts",
-        "Letter of acceptance from Spanish institution",
-        "Proof of financial means",
-        "Medical certificate",
-        "Criminal background check",
-        "Travel insurance"
-      ],
-      relatedServices: ["university-admission", "document-preparation", "certified-translation"]
-    },
+    // {
+    //   id: "student-visa",
+    //   title: "Student Visa (Estudio)",
+    //   category: "visa",
+    //   description: "Complete assistance with Spanish student visa applications for international students.",
+    //   detailedDescription: "Our comprehensive student visa service covers everything from initial consultation to visa approval. We guide you through the complex Spanish immigration process, ensuring all documentation is properly prepared and submitted.",
+    //   image: "/images/student-visa.jpg",
+    //   requiredPapers: [
+    //     "Valid passport",
+    //     "Completed visa application form",
+    //     "Academic transcripts",
+    //     "Letter of acceptance from Spanish institution",
+    //     "Proof of financial means",
+    //     "Medical certificate",
+    //     "Criminal background check",
+    //     "Travel insurance"
+    //   ],
+    //   relatedServices: ["university-admission", "document-preparation", "certified-translation"]
+    // },
     {
       id: "digital-nomad-visa",
       title: "Digital Nomad Visa",
@@ -114,23 +115,23 @@ export const siteData = {
       ],
       relatedServices: ["legal-consultation", "employment-support", "municipality-support"]
     },
-    {
-      id: "golden-visa",
-      title: "Golden Visa (Investment-Based)",
-      category: "visa",
-      description: "Residence visa through real estate or business investment.",
-      detailedDescription: "Obtain Spanish residency through significant investment in real estate (€500,000+), business projects, or government bonds.",
-      image: "/images/golden-visa.jpg",
-      requiredPapers: [
-        "Valid passport",
-        "Proof of investment funds",
-        "Investment documentation",
-        "Criminal background check",
-        "Medical insurance",
-        "Bank statements"
-      ],
-      relatedServices: ["business-support", "investment-consultation", "legal-representation"]
-    },
+    // {
+    //   id: "golden-visa",
+    //   title: "Golden Visa (Investment-Based)",
+    //   category: "visa",
+    //   description: "Residence visa through real estate or business investment.",
+    //   detailedDescription: "Obtain Spanish residency through significant investment in real estate (€500,000+), business projects, or government bonds.",
+    //   image: "/images/golden-visa.jpg",
+    //   requiredPapers: [
+    //     "Valid passport",
+    //     "Proof of investment funds",
+    //     "Investment documentation",
+    //     "Criminal background check",
+    //     "Medical insurance",
+    //     "Bank statements"
+    //   ],
+    //   relatedServices: ["business-support", "investment-consultation", "legal-representation"]
+    // },
     {
       id: "student-consultation",
       title: "Student Consultation and Pre-arrival Guidance",
@@ -564,31 +565,37 @@ export const siteData = {
       logo: "🌐"
     }
   ],
-
-  team: [
+team: [
+   
     {
-      name: "Maria Rodriguez",
-      role: "Founder & Immigration Specialist",
-      image: "/images/team/maria.jpg",
-      description: "15+ years experience in Spanish immigration law"
+      name: "Mosaad",
+      role: "Operations Manager",
+      image: "/images/team/Mossad.JPG", // Note: filename is "Mossad.JPG" not "Mosaad"
+      description: "Ensures efficient service delivery and process optimization across all immigration and business services"
     },
     {
-      name: "Carlos Jimenez",
-      role: "Education Consultant",
-      image: "/images/team/carlos.jpg",
-      description: "Former university admissions officer with deep knowledge of Spanish education system"
+      name: "Mosaab",
+      role: "Social Media & Marketing Specialist",
+      image: "/images/team/Mossab.PNG", // Note: filename is "Mossab.PNG"
+      description: "Manages digital presence, content creation, and client acquisition through strategic marketing campaigns"
     },
     {
-      name: "Ana Fernandez",
-      role: "Document Specialist",
-      image: "/images/team/ana.jpg",
-      description: "Expert in document preparation and certification processes"
+      name: "Mohamed Ali",
+      role: "Founder & Owner",
+      image: "/images/team/Mohamed Ali.PNG", // Note: .PNG (uppercase)
+      description: "Strategic leader in international education consulting, overseeing company vision and client success"
     },
     {
-      name: "Miguel Torres",
-      role: "Business Consultant",
-      image: "/images/team/miguel.jpg",
-      description: "Specializes in business registration and freelancer support"
+      name: "El Nossirat",
+      role: "Customer Service Supervisor",
+      image: "/images/team/El Nossirat.JPG", // Note: .JPG (uppercase)
+      description: "Leads client support team, ensuring exceptional service and timely resolution of all inquiries"
+    },
+    {
+      name: "Omar Ali",
+      role: "Business Development Coordinator",
+      image: "/images/team/omar.png", // Note: .png (lowercase)
+      description: "Identifies new partnership opportunities and expands service reach in the Spanish market"
     }
   ],
 

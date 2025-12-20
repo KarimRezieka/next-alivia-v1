@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useSiteData } from "@/hooks/useSiteData";
 import { useTranslation } from "@/hooks/useTranslation";
+import Image from "next/image";
 
 export default function About() {
   const { t } = useTranslation();
@@ -60,23 +61,25 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="relative h-96 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-transparent"></div>
-              <div className="relative z-10 text-center text-white">
-                <div className="text-8xl mb-4 opacity-30">🏢</div>
-                <h3 className="text-2xl font-bold mb-2">
-                  {t("trustedPartner")}
-                </h3>
-                <p className="text-lg opacity-90">{t("successMission")}</p>
-              </div>
-            </div>
-          </motion.div>
+  initial={{ opacity: 0, x: 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="relative"
+>
+  {/* Image Container */}
+<div className="relative h-auto min-h-96 rounded-3xl shadow-2xl overflow-hidden">
+  <div className="relative w-full pt-[75%] bg-white"> {/* Adjust ratio as needed */}
+    <Image
+      src="/images/team/Aliviva.jpeg"
+      alt="Aliviva office or team"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />
+  </div>
+</div>
+</motion.div>
         </div>
       </div>
     </section>

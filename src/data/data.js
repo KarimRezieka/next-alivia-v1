@@ -576,7 +576,7 @@ team: [
     {
       name: "Mosaab",
       role: "Social Media & Marketing Specialist",
-      image: "/images/team/Mossab.PNG", // Note: filename is "Mossab.PNG"
+      image: "/images/team/mosaab-s.png", // Note: filename is "Mossab.PNG"
       description: "Manages digital presence, content creation, and client acquisition through strategic marketing campaigns"
     },
     {

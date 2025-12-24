@@ -75,7 +75,7 @@ export async function POST(request) {
         name: `${name} (via Alivia Contact Form)`,
         address: process.env.EMAIL_USER
       },
-      to: "info@alivia.es",
+      to: "info@aliviva.es",
       replyTo: email,
       subject: `New Contact: ${name} - ${serviceName || 'General Inquiry'}`,
       text: `

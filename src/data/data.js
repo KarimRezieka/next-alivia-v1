@@ -4,7 +4,7 @@ export const siteData = {
     tagline: "Your Gateway to Spain",
     description: "Expert immigration and study guidance for your Spanish journey",
     mission: "To provide comprehensive, reliable, and personalized immigration and educational services that make your transition to Spain seamless and successful.",
-    email: "info@alivia.es",
+    email: "info@aliviva.es",
     phone: "+201116909878",
     address: "Carrer de Lepant, 270 Barcelona,",
     preservationNote: "please preservation is required",

@@ -37,31 +37,40 @@ export default function LanguageSelector() {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full mt-2 right-0 rtl:left-0 rtl:right-auto bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50"
-          >
-            {languages.map((language) => (
-              <button
-                key={language.code}
-                onClick={() => {
-                  changeLanguage(language.code);
-                  setIsOpen(false);
-                }}
-                className={`w-full flex items-center space-x-3 rtl:space-x-reverse px-4 py-3 text-left rtl:text-right hover:bg-gray-50 transition-colors duration-200 ${
-                  locale === language.code
-                    ? "bg-primary-50 text-primary-600"
-                    : "text-gray-700"
-                }`}
-              >
-                <span className="text-lg">{language.flag}</span>
-                <span className="text-sm font-medium">{language.name}</span>
-              </button>
-            ))}
-          </motion.div>
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 z-30"
+              onClick={() => setIsOpen(false)}
+            />
+
+            {/* Dropdown Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-16 right-4 rtl:left-4 rtl:right-auto bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 min-w-[160px]"
+            >
+              {languages.map((language) => (
+                <button
+                  key={language.code}
+                  onClick={() => {
+                    changeLanguage(language.code);
+                    setIsOpen(false);
+                  }}
+                  className={`w-full flex items-center space-x-3 rtl:space-x-reverse px-4 py-3 text-left rtl:text-right hover:bg-gray-50 transition-colors duration-200 ${
+                    locale === language.code
+                      ? "bg-primary-50 text-primary-600"
+                      : "text-gray-700"
+                  }`}
+                >
+                  <span className="text-lg">{language.flag}</span>
+                  <span className="text-sm font-medium">{language.name}</span>
+                </button>
+              ))}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </div>

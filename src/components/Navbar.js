@@ -28,9 +28,8 @@ export default function Navbar() {
         isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg" : "bg-white"
       }`}
     >
-      <div className="flex justify-center w-full">
-        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 w-full text-blue-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 text-blue-700">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="font-bold text-2xl text-primary-600">
@@ -154,7 +153,6 @@ export default function Navbar() {
             </div>
           </motion.div>
         </div>
-      </div>
     </motion.nav>
   );
 }

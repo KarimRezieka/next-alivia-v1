@@ -273,6 +273,15 @@ html[dir="rtl"] .right-4 {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Full width navbar without scroll */
+nav.fixed {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .navbar.scrolled {

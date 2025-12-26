@@ -103,18 +103,19 @@ export default function Navbar() {
               </button>
             </div>
           </div>
+        </div>
 
-          {/* Mobile Navigation */}
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{
-              opacity: isMobileMenuOpen ? 1 : 0,
-              height: isMobileMenuOpen ? "auto" : 0,
-            }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-white border-t max-w-7xl mx-auto"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1 rtl:space-y-reverse max-w-7xl mx-auto">
+        {/* Mobile Navigation */}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: isMobileMenuOpen ? 1 : 0,
+            height: isMobileMenuOpen ? "auto" : 0,
+          }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden overflow-hidden bg-white border-t"
+        >
+          <div className="px-2 pt-2 pb-3 space-y-1 rtl:space-y-reverse max-w-7xl mx-auto">
               <Link
                 href="#features"
                 className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium"
@@ -152,7 +153,6 @@ export default function Navbar() {
               </Link>
             </div>
           </motion.div>
-        </div>
     </motion.nav>
   );
 }

@@ -826,6 +826,19 @@ html[dir="rtl"] .language-option {
   .navbar-content {
     height: 3.5rem;
   }
+
+  /* Mobile Navigation Enhancements */
+  nav.fixed {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Better touch targets for mobile */
+  nav a,
+  nav button {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 640px) {

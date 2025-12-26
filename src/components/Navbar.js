@@ -28,11 +28,11 @@ export default function Navbar() {
         isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 text-blue-700">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="font-bold text-2xl text-primary-600">
+              <Link href="/" className="font-bold text-xl sm:text-2xl text-primary-600 hover:text-primary-700 transition-colors">
                 {siteData.company.name}
               </Link>
             </div>
@@ -76,27 +76,27 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+            <div className="md:hidden flex items-center space-x-2 rtl:space-x-reverse">
               <LanguageSelector />
               <button
-                className="p-2"
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors active:bg-gray-200"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle mobile menu"
               >
-                <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+                <div className="w-6 h-5 flex flex-col justify-center space-y-1.5">
                   <span
-                    className={`block w-full h-0.5 bg-gray-700 transition-all duration-300 ${
-                      isMobileMenuOpen ? "rotate-45 translate-y-1.5" : ""
+                    className={`block w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
+                      isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
                     }`}
                   ></span>
                   <span
-                    className={`block w-full h-0.5 bg-gray-700 transition-all duration-300 ${
+                    className={`block w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
                       isMobileMenuOpen ? "opacity-0" : ""
                     }`}
                   ></span>
                   <span
-                    className={`block w-full h-0.5 bg-gray-700 transition-all duration-300 ${
-                      isMobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                    className={`block w-full h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${
+                      isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
                     }`}
                   ></span>
                 </div>
@@ -112,40 +112,40 @@ export default function Navbar() {
               height: isMobileMenuOpen ? "auto" : 0,
             }}
             transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden bg-white border-t"
+            className="md:hidden overflow-hidden bg-white border-t border-gray-100"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 rtl:space-y-reverse">
+            <div className="px-3 py-4 space-y-1">
               <Link
                 href="#features"
-                className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium"
+                className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-primary-600 font-medium transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("features")}
               </Link>
               <Link
                 href="#services"
-                className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium"
+                className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-primary-600 font-medium transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("services")}
               </Link>
               <Link
                 href="#about"
-                className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium"
+                className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-primary-600 font-medium transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("about")}
               </Link>
               <Link
                 href="#contact"
-                className="block px-3 py-2 text-gray-700 hover:text-primary-600 font-medium"
+                className="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-primary-600 font-medium transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("contact")}
               </Link>
               <Link
                 href="/services"
-                className="block px-3 py-2 text-primary-600 font-semibold"
+                className="block px-4 py-3 mt-2 rounded-lg bg-primary-600 text-white font-semibold text-center hover:bg-primary-700 transition-all duration-200 shadow-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t("allServices")}

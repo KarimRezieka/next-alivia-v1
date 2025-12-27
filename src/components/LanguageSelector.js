@@ -17,7 +17,7 @@ export default function LanguageSelector() {
   const currentLanguage = languages.find((lang) => lang.code === locale);
 
   return (
-    <div className="relative">
+    <>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-2 rtl:space-x-reverse px-3 py-2 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition-colors duration-200"
@@ -44,35 +44,38 @@ export default function LanguageSelector() {
               onClick={() => setIsOpen(false)}
             />
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu - Full width like mobile menu */}
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-16 right-4 rtl:left-4 rtl:right-auto bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden z-50 min-w-[160px]"
+              className="fixed top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40"
+              style={{ width: "100vw", maxWidth: "100vw", overflowX: "hidden" }}
             >
-              {languages.map((language) => (
-                <button
-                  key={language.code}
-                  onClick={() => {
-                    changeLanguage(language.code);
-                    setIsOpen(false);
-                  }}
-                  className={`w-full flex items-center space-x-3 rtl:space-x-reverse px-4 py-3 text-left rtl:text-right hover:bg-gray-50 transition-colors duration-200 ${
-                    locale === language.code
-                      ? "bg-primary-50 text-primary-600"
-                      : "text-gray-700"
-                  }`}
-                >
-                  <span className="text-lg">{language.flag}</span>
-                  <span className="text-sm font-medium">{language.name}</span>
-                </button>
-              ))}
+              <div className="max-w-7xl mx-auto px-4 py-2">
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => {
+                      changeLanguage(language.code);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full flex items-center space-x-3 rtl:space-x-reverse px-4 py-3 text-left rtl:text-right hover:bg-gray-50 transition-colors duration-200 rounded-lg ${
+                      locale === language.code
+                        ? "bg-primary-50 text-primary-600"
+                        : "text-gray-700"
+                    }`}
+                  >
+                    <span className="text-lg">{language.flag}</span>
+                    <span className="text-sm font-medium">{language.name}</span>
+                  </button>
+                ))}
+              </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }

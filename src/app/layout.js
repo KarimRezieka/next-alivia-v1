@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+    <meta name="google-adsense-account" content="ca-pub-6292014084284997">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body
